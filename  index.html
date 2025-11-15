@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <title>じゃんけんゲーム</title>
+  <style>
+    body {
+      font-family: system-ui, sans-serif;
+      background: #111827;
+      color: #e5e7eb;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      margin: 0;
+    }
+
+    .card {
+      background: #1f2937;
+      padding: 24px 32px;
+      border-radius: 16px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+      max-width: 480px;
+      width: 100%;
+    }
+
+    h1 {
+      font-size: 24px;
+      margin-top: 0;
+      margin-bottom: 8px;
+    }
+
+    .subtitle {
+      font-size: 13px;
+      color: #9ca3af;
+      margin-bottom: 16px;
+    }
+
+    .buttons {
+      display: flex;
+      gap: 12px;
+      margin-bottom: 16px;
+    }
+
+    button {
+      flex: 1;
+      padding: 10px 0;
+      border-radius: 999px;
+      border: none;
+      cursor: pointer;
+      font-size: 15px;
+      background: #3b82f6;
+      color: #f9fafb;
+    }
+
+    button:hover {
+      filter: brightness(1.1);
+    }
+
+    .result {
+      margin-bottom: 8px;
+      font-size: 16px;
+    }
+
+    .hands {
+      font-size: 14px;
+      color: #e5e7eb;
+      margin-bottom: 8px;
+    }
+
+    .stats {
+      font-size: 13px;
+      color: #9ca3af;
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h1>じゃんけんゲーム</h1>
+    <div class="subtitle">ボタンを押して勝敗を確かめよう。</div>
+
+    <div class="buttons">
+      <button onclick="play('グー')">グー</button>
+      <button onclick="play('チョキ')">チョキ</button>
+      <button onclick="play('パー')">パー</button>
+    </div>
+
+    <div class="result" id="result">まだ勝負していません。</div>
+    <div class="hands" id="hands"></div>
+    <div class="stats" id="stats">勝ち: 0 / 負け: 0 / あいこ: 0</div>
+  </div>
+
+  <script>
+    const hands = ['グー', 'チョキ', 'パー'];
+    let win = 0, lose = 0, draw = 0;
+
+    function judge(user, cpu) {
+      if (user === cpu) return 'draw';
+      if (
+        (user === 'グー'   && cpu === 'チョキ') ||
+        (user === 'チョキ' && cpu === 'パー')   ||
+        (user === 'パー'   && cpu === 'グー')
+      ) {
+        return 'win';
+      }
+      return 'lose';
+    }
+
+    function play(userHand) {
+      const cpuHand = hands[Math.floor(Math.random() * hands.length)];
+      const resultType = judge(userHand, cpuHand);
+
+      let message = '';
+      if (resultType === 'win') {
+        win++;
+        message = '結果: あなたの勝ち！';
+      } else if (resultType === 'lose') {
+        lose++;
+        message = '結果: あなたの負け…。';
+      } else {
+        draw++;
+        message = '結果: あいこ。';
+      }
+
+      document.getElementById('result').textContent = message;
+      document.getElementById('hands').textContent =
+        `あなた: ${userHand} / コンピュータ: ${cpuHand}`;
+      document.getElementById('stats').textContent =
+        `勝ち: ${win} / 負け: ${lose} / あいこ: ${draw}`;
+    }
+  </script>
+</body>
+</html>
