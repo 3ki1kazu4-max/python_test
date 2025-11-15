@@ -2,105 +2,499 @@
 <html lang="ja">
 <head>
   <meta charset="UTF-8" />
-  <title>じゃんけんゲーム</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>じゃんけんゲーム 🎮</title>
   <style>
+    @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700;900&display=swap');
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
     body {
-      font-family: system-ui, sans-serif;
-      background: #111827;
-      color: #e5e7eb;
+      font-family: 'Noto Sans JP', system-ui, sans-serif;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
+      background-size: 400% 400%;
+      animation: gradientShift 15s ease infinite;
+      color: #fff;
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
       min-height: 100vh;
       margin: 0;
+      overflow-x: hidden;
+      position: relative;
+    }
+
+    @keyframes gradientShift {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    .stars {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .star {
+      position: absolute;
+      width: 2px;
+      height: 2px;
+      background: white;
+      border-radius: 50%;
+      animation: twinkle 3s infinite;
+    }
+
+    @keyframes twinkle {
+      0%, 100% { opacity: 0.3; transform: scale(1); }
+      50% { opacity: 1; transform: scale(1.5); }
+    }
+
+    .container {
+      position: relative;
+      z-index: 1;
+      width: 100%;
+      max-width: 600px;
+      padding: 20px;
     }
 
     .card {
-      background: #1f2937;
-      padding: 24px 32px;
-      border-radius: 16px;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-      max-width: 480px;
-      width: 100%;
+      background: rgba(255, 255, 255, 0.15);
+      backdrop-filter: blur(20px);
+      padding: 40px;
+      border-radius: 30px;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3),
+                  0 0 0 1px rgba(255, 255, 255, 0.2);
+      text-align: center;
+      animation: cardEntrance 0.6s ease-out;
+    }
+
+    @keyframes cardEntrance {
+      from {
+        opacity: 0;
+        transform: translateY(30px) scale(0.9);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+      }
     }
 
     h1 {
-      font-size: 24px;
-      margin-top: 0;
-      margin-bottom: 8px;
+      font-size: 42px;
+      font-weight: 900;
+      margin-bottom: 10px;
+      text-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+      background: linear-gradient(45deg, #fff, #f0f0f0);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      animation: titleGlow 2s ease-in-out infinite;
+    }
+
+    @keyframes titleGlow {
+      0%, 100% { filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.5)); }
+      50% { filter: drop-shadow(0 0 20px rgba(255, 255, 255, 0.8)); }
     }
 
     .subtitle {
-      font-size: 13px;
-      color: #9ca3af;
-      margin-bottom: 16px;
+      font-size: 16px;
+      color: rgba(255, 255, 255, 0.9);
+      margin-bottom: 30px;
+      font-weight: 400;
+    }
+
+    .hands-display {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      margin: 40px 0;
+      min-height: 200px;
+      position: relative;
+    }
+
+    .hand-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 15px;
+    }
+
+    .hand-label {
+      font-size: 18px;
+      font-weight: 700;
+      color: rgba(255, 255, 255, 0.9);
+      text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+    }
+
+    .hand-emoji {
+      font-size: 120px;
+      line-height: 1;
+      filter: drop-shadow(0 10px 30px rgba(0, 0, 0, 0.4));
+      transition: all 0.3s ease;
+      transform: scale(0);
+      animation: handAppear 0.5s ease-out forwards;
+    }
+
+    @keyframes handAppear {
+      to {
+        transform: scale(1) rotate(0deg);
+      }
+    }
+
+    .hand-emoji.shake {
+      animation: handShake 0.5s ease-in-out;
+    }
+
+    @keyframes handShake {
+      0%, 100% { transform: rotate(0deg) scale(1); }
+      25% { transform: rotate(-15deg) scale(1.1); }
+      75% { transform: rotate(15deg) scale(1.1); }
+    }
+
+    .hand-emoji.win {
+      animation: handWin 0.6s ease-out;
+    }
+
+    @keyframes handWin {
+      0% { transform: scale(1) rotate(0deg); }
+      50% { transform: scale(1.3) rotate(10deg); }
+      100% { transform: scale(1.2) rotate(0deg); }
+    }
+
+    .hand-emoji.lose {
+      animation: handLose 0.6s ease-out;
+    }
+
+    @keyframes handLose {
+      0% { transform: scale(1) rotate(0deg); }
+      50% { transform: scale(0.8) rotate(-10deg); }
+      100% { transform: scale(0.9) rotate(0deg); }
+    }
+
+    .vs {
+      font-size: 32px;
+      font-weight: 900;
+      color: rgba(255, 255, 255, 0.8);
+      text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+      animation: vsPulse 1.5s ease-in-out infinite;
+    }
+
+    @keyframes vsPulse {
+      0%, 100% { transform: scale(1); opacity: 0.8; }
+      50% { transform: scale(1.1); opacity: 1; }
     }
 
     .buttons {
       display: flex;
-      gap: 12px;
-      margin-bottom: 16px;
+      gap: 15px;
+      margin: 30px 0;
+      justify-content: center;
     }
 
-    button {
+    .hand-button {
       flex: 1;
-      padding: 10px 0;
-      border-radius: 999px;
-      border: none;
+      padding: 20px;
+      border-radius: 20px;
+      border: 3px solid rgba(255, 255, 255, 0.3);
+      background: rgba(255, 255, 255, 0.2);
+      backdrop-filter: blur(10px);
       cursor: pointer;
-      font-size: 15px;
-      background: #3b82f6;
-      color: #f9fafb;
+      font-size: 24px;
+      font-weight: 700;
+      color: #fff;
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+      min-width: 100px;
     }
 
-    button:hover {
-      filter: brightness(1.1);
+    .hand-button::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 0;
+      height: 0;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.3);
+      transform: translate(-50%, -50%);
+      transition: width 0.6s, height 0.6s;
+    }
+
+    .hand-button:hover::before {
+      width: 300px;
+      height: 300px;
+    }
+
+    .hand-button:hover {
+      transform: translateY(-5px) scale(1.05);
+      border-color: rgba(255, 255, 255, 0.6);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    }
+
+    .hand-button:active {
+      transform: translateY(-2px) scale(0.98);
+    }
+
+    .hand-button.clicked {
+      animation: buttonClick 0.4s ease-out;
+    }
+
+    @keyframes buttonClick {
+      0% { transform: scale(1); }
+      50% { transform: scale(0.9); }
+      100% { transform: scale(1); }
     }
 
     .result {
-      margin-bottom: 8px;
-      font-size: 16px;
+      font-size: 32px;
+      font-weight: 900;
+      margin: 30px 0 20px;
+      min-height: 50px;
+      text-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+      animation: resultEntrance 0.5s ease-out;
     }
 
-    .hands {
-      font-size: 14px;
-      color: #e5e7eb;
-      margin-bottom: 8px;
+    @keyframes resultEntrance {
+      from {
+        opacity: 0;
+        transform: translateY(-20px) scale(0.8);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+      }
+    }
+
+    .result.win {
+      color: #4ade80;
+      animation: resultWin 0.6s ease-out;
+    }
+
+    @keyframes resultWin {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.2) rotate(5deg); }
+      100% { transform: scale(1); }
+    }
+
+    .result.lose {
+      color: #f87171;
+      animation: resultLose 0.6s ease-out;
+    }
+
+    @keyframes resultLose {
+      0% { transform: scale(1); }
+      50% { transform: scale(0.9) rotate(-5deg); }
+      100% { transform: scale(1); }
+    }
+
+    .result.draw {
+      color: #fbbf24;
     }
 
     .stats {
-      font-size: 13px;
-      color: #9ca3af;
+      display: flex;
+      justify-content: space-around;
+      margin-top: 30px;
+      padding-top: 30px;
+      border-top: 2px solid rgba(255, 255, 255, 0.2);
+      font-size: 18px;
+      font-weight: 700;
+    }
+
+    .stat-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .stat-value {
+      font-size: 32px;
+      text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+    }
+
+    .stat-label {
+      font-size: 14px;
+      opacity: 0.9;
+    }
+
+    .particles {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 2;
+    }
+
+    .particle {
+      position: absolute;
+      width: 10px;
+      height: 10px;
+      background: rgba(255, 255, 255, 0.8);
+      border-radius: 50%;
+      pointer-events: none;
+      animation: particleFloat 2s ease-out forwards;
+    }
+
+    @keyframes particleFloat {
+      0% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+      }
+      100% {
+        opacity: 0;
+        transform: translateY(-200px) scale(0);
+      }
+    }
+
+    .countdown {
+      font-size: 80px;
+      font-weight: 900;
+      text-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
+      animation: countdownPulse 0.5s ease-out;
+    }
+
+    @keyframes countdownPulse {
+      0% { transform: scale(0); opacity: 0; }
+      50% { transform: scale(1.3); opacity: 1; }
+      100% { transform: scale(1); opacity: 1; }
+    }
+
+    @media (max-width: 600px) {
+      .card {
+        padding: 30px 20px;
+      }
+
+      h1 {
+        font-size: 32px;
+      }
+
+      .hand-emoji {
+        font-size: 80px;
+      }
+
+      .hand-button {
+        font-size: 20px;
+        padding: 15px;
+      }
+
+      .result {
+        font-size: 24px;
+      }
     }
   </style>
 </head>
 <body>
-  <div class="card">
-    <h1>じゃんけんゲーム</h1>
-    <div class="subtitle">ボタンを押して勝敗を確かめよう。</div>
+  <div class="stars" id="stars"></div>
+  <div class="particles" id="particles"></div>
 
-    <div class="buttons">
-      <button onclick="play('グー')">グー</button>
-      <button onclick="play('チョキ')">チョキ</button>
-      <button onclick="play('パー')">パー</button>
+  <div class="container">
+    <div class="card">
+      <h1>🎮 じゃんけんゲーム 🎮</h1>
+      <div class="subtitle">手を選んで勝負しよう！</div>
+
+      <div class="hands-display" id="handsDisplay">
+        <div class="hand-container">
+          <div class="hand-label">あなた</div>
+          <div class="hand-emoji" id="userHand">👤</div>
+        </div>
+        <div class="vs">VS</div>
+        <div class="hand-container">
+          <div class="hand-label">コンピューター</div>
+          <div class="hand-emoji" id="cpuHand">🤖</div>
+        </div>
+      </div>
+
+      <div class="buttons">
+        <button class="hand-button" onclick="play('グー')" id="btn-gu">
+          ✊<br><span style="font-size: 14px;">グー</span>
+        </button>
+        <button class="hand-button" onclick="play('チョキ')" id="btn-choki">
+          ✌️<br><span style="font-size: 14px;">チョキ</span>
+        </button>
+        <button class="hand-button" onclick="play('パー')" id="btn-pa">
+          ✋<br><span style="font-size: 14px;">パー</span>
+        </button>
+      </div>
+
+      <div class="result" id="result">手を選んでください！</div>
+
+      <div class="stats">
+        <div class="stat-item">
+          <div class="stat-value" id="winCount">0</div>
+          <div class="stat-label">勝ち 🎉</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-value" id="loseCount">0</div>
+          <div class="stat-label">負け 😢</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-value" id="drawCount">0</div>
+          <div class="stat-label">あいこ 🤝</div>
+        </div>
+      </div>
     </div>
-
-    <div class="result" id="result">まだ勝負していません。</div>
-    <div class="hands" id="hands"></div>
-    <div class="stats" id="stats">勝ち: 0 / 負け: 0 / あいこ: 0</div>
   </div>
 
   <script>
     const hands = ['グー', 'チョキ', 'パー'];
+    const handEmojis = {
+      'グー': '✊',
+      'チョキ': '✌️',
+      'パー': '✋'
+    };
+    
     let win = 0, lose = 0, draw = 0;
+    let isPlaying = false;
+
+    // 星を生成
+    function createStars() {
+      const starsContainer = document.getElementById('stars');
+      for (let i = 0; i < 50; i++) {
+        const star = document.createElement('div');
+        star.className = 'star';
+        star.style.left = Math.random() * 100 + '%';
+        star.style.top = Math.random() * 100 + '%';
+        star.style.animationDelay = Math.random() * 3 + 's';
+        starsContainer.appendChild(star);
+      }
+    }
+
+    // パーティクルエフェクト
+    function createParticles(x, y, count = 20) {
+      const particlesContainer = document.getElementById('particles');
+      for (let i = 0; i < count; i++) {
+        const particle = document.createElement('div');
+        particle.className = 'particle';
+        particle.style.left = x + 'px';
+        particle.style.top = y + 'px';
+        particle.style.background = `hsl(${Math.random() * 360}, 70%, 70%)`;
+        particle.style.animationDelay = Math.random() * 0.2 + 's';
+        particle.style.transform = `translate(${(Math.random() - 0.5) * 100}px, ${(Math.random() - 0.5) * 100}px)`;
+        particlesContainer.appendChild(particle);
+        setTimeout(() => particle.remove(), 2000);
+      }
+    }
 
     function judge(user, cpu) {
       if (user === cpu) return 'draw';
       if (
-        (user === 'グー'   && cpu === 'チョキ') ||
-        (user === 'チョキ' && cpu === 'パー')   ||
-        (user === 'パー'   && cpu === 'グー')
+        (user === 'グー' && cpu === 'チョキ') ||
+        (user === 'チョキ' && cpu === 'パー') ||
+        (user === 'パー' && cpu === 'グー')
       ) {
         return 'win';
       }
@@ -108,27 +502,100 @@
     }
 
     function play(userHand) {
-      const cpuHand = hands[Math.floor(Math.random() * hands.length)];
-      const resultType = judge(userHand, cpuHand);
+      if (isPlaying) return;
+      isPlaying = true;
 
-      let message = '';
-      if (resultType === 'win') {
-        win++;
-        message = '結果: あなたの勝ち！';
-      } else if (resultType === 'lose') {
-        lose++;
-        message = '結果: あなたの負け…。';
-      } else {
-        draw++;
-        message = '結果: あいこ。';
-      }
+      const button = event.target.closest('.hand-button');
+      button.classList.add('clicked');
+      setTimeout(() => button.classList.remove('clicked'), 400);
 
-      document.getElementById('result').textContent = message;
-      document.getElementById('hands').textContent =
-        `あなた: ${userHand} / コンピュータ: ${cpuHand}`;
-      document.getElementById('stats').textContent =
-        `勝ち: ${win} / 負け: ${lose} / あいこ: ${draw}`;
+      // カウントダウン演出
+      const userHandEl = document.getElementById('userHand');
+      const cpuHandEl = document.getElementById('cpuHand');
+      const resultEl = document.getElementById('result');
+
+      userHandEl.textContent = handEmojis[userHand];
+      userHandEl.classList.add('shake');
+      
+      resultEl.textContent = '';
+      resultEl.className = 'result';
+
+      let countdown = 3;
+      const countdownInterval = setInterval(() => {
+        if (countdown > 0) {
+          resultEl.textContent = countdown;
+          resultEl.className = 'result countdown';
+          countdown--;
+        } else {
+          clearInterval(countdownInterval);
+          
+          // CPUの手を決定
+          const cpuHand = hands[Math.floor(Math.random() * hands.length)];
+          const resultType = judge(userHand, cpuHand);
+
+          // 手を表示
+          userHandEl.textContent = handEmojis[userHand];
+          cpuHandEl.textContent = handEmojis[cpuHand];
+          userHandEl.classList.remove('shake');
+          cpuHandEl.classList.remove('shake', 'win', 'lose');
+          userHandEl.classList.remove('win', 'lose');
+
+          // 結果に応じたアニメーション
+          let message = '';
+          if (resultType === 'win') {
+            win++;
+            message = '🎉 あなたの勝ち！ 🎉';
+            resultEl.className = 'result win';
+            userHandEl.classList.add('win');
+            cpuHandEl.classList.add('lose');
+            createParticles(window.innerWidth / 2, window.innerHeight / 2, 30);
+          } else if (resultType === 'lose') {
+            lose++;
+            message = '😢 あなたの負け...';
+            resultEl.className = 'result lose';
+            userHandEl.classList.add('lose');
+            cpuHandEl.classList.add('win');
+          } else {
+            draw++;
+            message = '🤝 あいこ！';
+            resultEl.className = 'result draw';
+            userHandEl.classList.add('shake');
+            cpuHandEl.classList.add('shake');
+          }
+
+          resultEl.textContent = message;
+          updateStats();
+
+          // アニメーション後にリセット
+          setTimeout(() => {
+            userHandEl.classList.remove('win', 'lose', 'shake');
+            cpuHandEl.classList.remove('win', 'lose', 'shake');
+            isPlaying = false;
+          }, 2000);
+        }
+      }, 500);
     }
+
+    function updateStats() {
+      document.getElementById('winCount').textContent = win;
+      document.getElementById('loseCount').textContent = lose;
+      document.getElementById('drawCount').textContent = draw;
+    }
+
+    // キーボード入力対応
+    document.addEventListener('keydown', (e) => {
+      if (isPlaying) return;
+      if (e.key === '1' || e.key === 'g' || e.key === 'G') {
+        document.getElementById('btn-gu').click();
+      } else if (e.key === '2' || e.key === 'c' || e.key === 'C') {
+        document.getElementById('btn-choki').click();
+      } else if (e.key === '3' || e.key === 'p' || e.key === 'P') {
+        document.getElementById('btn-pa').click();
+      }
+    });
+
+    // 初期化
+    createStars();
   </script>
 </body>
 </html>
