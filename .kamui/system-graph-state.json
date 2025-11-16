@@ -1,0 +1,761 @@
+{
+  "schemaVersion": 1,
+  "projectPath": "/Users/ishizakiwa/Projects/python_test",
+  "projectRootName": "python_test",
+  "graphRenderingMode": "normal",
+  "linkDisplayMode": "all",
+  "graphStats": {
+    "totalNodes": 7,
+    "folders": 1,
+    "files": 6,
+    "images": 0,
+    "videos": 0,
+    "audio": 0,
+    "code": 1,
+    "text": 1,
+    "html": 4,
+    "yaml": 0,
+    "json": 0,
+    "other": 0,
+    "totalLines": 0,
+    "maxLines": 0
+  },
+  "directoryTree": {
+    "name": "python_test",
+    "type": "directory",
+    "children": [
+      {
+        "name": "index.html",
+        "type": "file",
+        "lines": 0
+      },
+      {
+        "name": "README.md",
+        "type": "file",
+        "lines": 0
+      },
+      {
+        "name": "game.html",
+        "type": "file",
+        "lines": 0
+      },
+      {
+        "name": "game2.html",
+        "type": "file",
+        "lines": 0
+      },
+      {
+        "name": "gameのコピー.html",
+        "type": "file",
+        "lines": 0
+      },
+      {
+        "name": "main.py",
+        "type": "file",
+        "lines": 0
+      }
+    ]
+  },
+  "graphData": {
+    "nodes": [
+      {
+        "id": "python_test",
+        "name": "python_test",
+        "path": "python_test",
+        "type": "directory",
+        "lines": 0,
+        "val": 14,
+        "color": "#4d515a",
+        "baseColor": "#4ec9b0",
+        "originalColor": "#4ec9b0",
+        "defaultGlow": 0.18,
+        "glowIntensity": 0.18,
+        "highlighted": false,
+        "parentPath": null,
+        "childFileCount": 6,
+        "x": -0.38851020974182665,
+        "y": 0.5203114118531271,
+        "z": 0.44570970347255046,
+        "vx": -0.006593077123214275,
+        "vy": 0.009906405413884316,
+        "vz": 0.00685781369977132
+      },
+      {
+        "id": "python_test/index.html",
+        "name": "index.html",
+        "path": "python_test/index.html",
+        "type": "file",
+        "lines": 0,
+        "val": 6,
+        "color": "#e44d26",
+        "baseColor": "#e44d26",
+        "originalColor": "#e44d26",
+        "defaultGlow": 0.18,
+        "glowIntensity": 0.18,
+        "highlighted": false,
+        "parentPath": "python_test",
+        "childFileCount": 0,
+        "x": -1.125891010933656,
+        "y": 2.0095609350668853,
+        "z": 4.2816097251838485,
+        "vx": -0.006593077123214275,
+        "vy": 0.009906405413884316,
+        "vz": 0.00685781369977132
+      },
+      {
+        "id": "python_test/README.md",
+        "name": "README.md",
+        "path": "python_test/README.md",
+        "type": "file",
+        "lines": 0,
+        "val": 6,
+        "color": "#3498db",
+        "baseColor": "#3498db",
+        "originalColor": "#3498db",
+        "defaultGlow": 0.18,
+        "glowIntensity": 0.18,
+        "highlighted": false,
+        "parentPath": "python_test",
+        "childFileCount": 0,
+        "x": 34.94141224535723,
+        "y": -7.364969601986511,
+        "z": -5.858688044173895,
+        "vx": -0.006643559091760142,
+        "vy": 0.012375372502954817,
+        "vz": 0.007508222141556267
+      },
+      {
+        "id": "python_test/game.html",
+        "name": "game.html",
+        "path": "python_test/game.html",
+        "type": "file",
+        "lines": 0,
+        "val": 6,
+        "color": "#e44d26",
+        "baseColor": "#e44d26",
+        "originalColor": "#e44d26",
+        "defaultGlow": 0.18,
+        "glowIntensity": 0.18,
+        "highlighted": false,
+        "parentPath": "python_test",
+        "childFileCount": 0,
+        "x": 2.7740625618381203,
+        "y": 27.353342711213042,
+        "z": -24.370598928100833,
+        "vx": -0.013719361984814738,
+        "vy": 0.017790768097095323,
+        "vz": 0.014982092414801772
+      },
+      {
+        "id": "python_test/game2.html",
+        "name": "game2.html",
+        "path": "python_test/game2.html",
+        "type": "file",
+        "lines": 0,
+        "val": 6,
+        "color": "#e44d26",
+        "baseColor": "#e44d26",
+        "originalColor": "#e44d26",
+        "defaultGlow": 0.18,
+        "glowIntensity": 0.18,
+        "highlighted": true,
+        "parentPath": "python_test",
+        "childFileCount": 0,
+        "x": -0.9846825539569902,
+        "y": -28.933971218568285,
+        "z": 22.155170039827084,
+        "vx": -0.013627405117223537,
+        "vy": 0.015049704104541697,
+        "vz": 0.016875070579810084
+      },
+      {
+        "id": "python_test/gameのコピー.html",
+        "name": "gameのコピー.html",
+        "path": "python_test/gameのコピー.html",
+        "type": "file",
+        "lines": 0,
+        "val": 6,
+        "color": "#e44d26",
+        "baseColor": "#e44d26",
+        "originalColor": "#e44d26",
+        "defaultGlow": 0.18,
+        "glowIntensity": 0.18,
+        "highlighted": false,
+        "parentPath": "python_test",
+        "childFileCount": 0,
+        "x": -3.859555242652134,
+        "y": -3.5310009575589145,
+        "z": -1.911717789293827,
+        "vx": -0.006593077123214275,
+        "vy": 0.009906405413884316,
+        "vz": 0.00685781369977132
+      },
+      {
+        "id": "python_test/main.py",
+        "name": "main.py",
+        "path": "python_test/main.py",
+        "type": "file",
+        "lines": 0,
+        "val": 6,
+        "color": "#57606f",
+        "baseColor": "#57606f",
+        "originalColor": "#57606f",
+        "defaultGlow": 0.18,
+        "glowIntensity": 0.18,
+        "highlighted": false,
+        "parentPath": "python_test",
+        "childFileCount": 0,
+        "x": -35.56343573687767,
+        "y": 7.804053966982195,
+        "z": 6.861046230425086,
+        "vx": -0.007951290765088279,
+        "vy": 0.015823410485532905,
+        "vz": 0.011741784035606719
+      }
+    ],
+    "links": [
+      {
+        "source": "python_test",
+        "target": "python_test/index.html",
+        "type": "tree"
+      },
+      {
+        "source": "python_test",
+        "target": "python_test/README.md",
+        "type": "tree"
+      },
+      {
+        "source": "python_test",
+        "target": "python_test/game.html",
+        "type": "tree"
+      },
+      {
+        "source": "python_test",
+        "target": "python_test/game2.html",
+        "type": "tree"
+      },
+      {
+        "source": "python_test",
+        "target": "python_test/gameのコピー.html",
+        "type": "tree"
+      },
+      {
+        "source": "python_test",
+        "target": "python_test/main.py",
+        "type": "tree"
+      }
+    ]
+  },
+  "trackedFiles": [
+    "README.md",
+    "game.html",
+    "gameのコピー.html",
+    "index.html",
+    "main.py"
+  ],
+  "uiState": {
+    "expandedDirs": [
+      "python_test",
+      "python_test/python_test",
+      "python_test/.kamui",
+      "python_test/python_test/.kamui",
+      "python_test/.kamui/prompt",
+      "python_test/python_test/.kamui/prompt"
+    ],
+    "selectedPath": null
+  },
+  "directoryTreeMeta": {
+    "mode": "full",
+    "maxDepthApplied": 10,
+    "maxEntriesPerDirectory": 0,
+    "isPartial": false
+  },
+  "gitHistoryMeta": {
+    "mode": "full",
+    "isPartial": false,
+    "branchPulse": {
+      "generatedAt": 1763292863218,
+      "targets": [
+        "main",
+        "task/task-1763273034212-e7caa9",
+        "task/task-1763273036364-cebc7e",
+        "task/task-1763273038616-6ed9ca",
+        "master"
+      ],
+      "statsByBranch": {
+        "task/task-1763273036364-cebc7e": {
+          "branch": "task/task-1763273036364-cebc7e",
+          "head": "903c0d6c8151479499e274854ba412fc333d9785",
+          "baseRef": "main",
+          "baseHead": "903c0d6c8151479499e274854ba412fc333d9785",
+          "mergeBase": "903c0d6c8151479499e274854ba412fc333d9785",
+          "divergence": {
+            "aheadCount": 0,
+            "fileCount": 0
+          },
+          "baseline": {
+            "aheadCount": 0,
+            "behindCount": 0,
+            "fileCount": 0
+          },
+          "upstream": null
+        },
+        "main": {
+          "branch": "main",
+          "head": "903c0d6c8151479499e274854ba412fc333d9785",
+          "baseRef": "origin/main",
+          "baseHead": "903c0d6c8151479499e274854ba412fc333d9785",
+          "mergeBase": "903c0d6c8151479499e274854ba412fc333d9785",
+          "divergence": {
+            "aheadCount": 0,
+            "fileCount": 0
+          },
+          "baseline": {
+            "aheadCount": 0,
+            "behindCount": 0,
+            "fileCount": 0
+          },
+          "upstream": null
+        },
+        "task/task-1763273038616-6ed9ca": {
+          "branch": "task/task-1763273038616-6ed9ca",
+          "head": "903c0d6c8151479499e274854ba412fc333d9785",
+          "baseRef": "main",
+          "baseHead": "903c0d6c8151479499e274854ba412fc333d9785",
+          "mergeBase": "903c0d6c8151479499e274854ba412fc333d9785",
+          "divergence": {
+            "aheadCount": 0,
+            "fileCount": 0
+          },
+          "baseline": {
+            "aheadCount": 0,
+            "behindCount": 0,
+            "fileCount": 0
+          },
+          "upstream": null
+        },
+        "task/task-1763273034212-e7caa9": {
+          "branch": "task/task-1763273034212-e7caa9",
+          "head": "f8b4bf8c5f9adfe531aeab7dfc6cf8c2e60cc1f6",
+          "baseRef": "main",
+          "baseHead": "903c0d6c8151479499e274854ba412fc333d9785",
+          "mergeBase": "903c0d6c8151479499e274854ba412fc333d9785",
+          "divergence": {
+            "aheadCount": 1,
+            "fileCount": 1
+          },
+          "baseline": {
+            "aheadCount": 1,
+            "behindCount": 0,
+            "fileCount": 1
+          },
+          "upstream": null
+        }
+      }
+    }
+  },
+  "gitHistoryState": {
+    "selectedTimelineIndex": 1,
+    "activeCommitHash": "f8b4bf8c5f9adfe531aeab7dfc6cf8c2e60cc1f6",
+    "entries": [
+      {
+        "type": "live",
+        "label": "現在のコードベース",
+        "files": [],
+        "branch": "main",
+        "targetCommitHash": "903c0d6c8151479499e274854ba412fc333d9785",
+        "worktreePath": "/Users/ishizakiwa/Projects/python_test",
+        "timestamp": 1763292863237,
+        "lane": 0,
+        "branchLabel": "main",
+        "branchTags": [
+          "main"
+        ],
+        "isDefaultWorktree": true,
+        "branchColor": "#4f85e8",
+        "index": 0
+      },
+      {
+        "type": "commit",
+        "label": "Add AI competition UI",
+        "commit": {
+          "hash": "f8b4bf8c5f9adfe531aeab7dfc6cf8c2e60cc1f6",
+          "subject": "Add AI competition UI",
+          "author": "石崎和",
+          "timestamp": 1763291063,
+          "parents": [
+            "903c0d6c8151479499e274854ba412fc333d9785"
+          ],
+          "parent": "903c0d6c8151479499e274854ba412fc333d9785",
+          "refs": "task/task-1763273034212-e7caa9",
+          "branches": [
+            "task/task-1763273034212-e7caa9"
+          ]
+        },
+        "commitHash": "f8b4bf8c5f9adfe531aeab7dfc6cf8c2e60cc1f6",
+        "lane": 1,
+        "parentLinks": [
+          {
+            "hash": "903c0d6c8151479499e274854ba412fc333d9785",
+            "lane": 0
+          }
+        ],
+        "primaryBranchName": "task/task-1763273034212-e7caa9",
+        "branchColor": "#e84f7f",
+        "branchTags": [],
+        "worktrees": [
+          {
+            "path": "/Users/ishizakiwa/Projects/python_test/.worktrees/task-1763273034212-e7caa9",
+            "head": "f8b4bf8c5f9adfe531aeab7dfc6cf8c2e60cc1f6",
+            "branch": "task/task-1763273034212-e7caa9",
+            "prunable": true,
+            "isMerged": false,
+            "mergeCommitHash": null,
+            "status": {
+              "staged": [],
+              "unstaged": [],
+              "untracked": [],
+              "capturedAt": 1763292863020
+            },
+            "normalizedPath": "/Users/ishizakiwa/Projects/python_test/.worktrees/task-1763273034212-e7caa9",
+            "lane": 1
+          }
+        ],
+        "index": 1
+      },
+      {
+        "type": "anchor",
+        "label": "[作業中] CodexCLI1: AIコンペ: HTMLとJSとCSSでゲー…",
+        "branch": "task/task-1763273034212-e7caa9",
+        "worktreePath": "/Users/ishizakiwa/Projects/python_test/.worktrees/task-1763273034212-e7caa9",
+        "parentCommitHash": "f8b4bf8c5f9adfe531aeab7dfc6cf8c2e60cc1f6",
+        "lane": 1,
+        "isMerged": false,
+        "mergeCommitHash": null,
+        "statusChildren": [],
+        "isDefaultWorktree": false,
+        "renderMode": "node",
+        "shouldHide": false,
+        "tagLabel": "task/task-1763273034212-e7caa9",
+        "taskId": "task-1763273034212-e7caa9",
+        "taskStatus": "working",
+        "taskStatusLabel": "作業中",
+        "taskName": "CodexCLI1: AIコンペ: HTMLとJSとCSSでゲームアプリUIを作成し、複数モデルに提案させる。結果をgame2.htmlに出力。最終的にHTMLを開く。",
+        "tooltip": "タスク: CodexCLI1: AIコンペ: HTMLとJSとCSSでゲームアプリUIを作成し、複数モデルに提案させる。結果をgame2.htmlに出力。最終的にHTMLを開く。\nステータス: 作業中\nID: task-1763273034212-e7caa9\nBranch: task/task-1763273034212-e7caa9\nWorktree: Users/ishizakiwa/Projects/python_test/.worktrees/task-1763273034212-e7caa9",
+        "branchColor": "#e84f7f",
+        "index": 2
+      },
+      {
+        "type": "unstaged",
+        "label": "未ステージ (1)",
+        "files": [
+          "game2.html"
+        ],
+        "branch": "main",
+        "targetCommitHash": "903c0d6c8151479499e274854ba412fc333d9785",
+        "worktreePath": "/Users/ishizakiwa/Projects/python_test",
+        "timestamp": 1763292863237,
+        "sortOrder": 0,
+        "lane": 0,
+        "branchColor": "#4f85e8",
+        "index": 3
+      },
+      {
+        "type": "staged",
+        "label": "ステージ済み (1)",
+        "files": [
+          "ameのコピー.html"
+        ],
+        "branch": "main",
+        "targetCommitHash": "903c0d6c8151479499e274854ba412fc333d9785",
+        "worktreePath": "/Users/ishizakiwa/Projects/python_test",
+        "timestamp": 1763292863237,
+        "sortOrder": 1,
+        "lane": 0,
+        "branchColor": "#4f85e8",
+        "index": 4
+      },
+      {
+        "type": "anchor",
+        "label": "[作業中] CodexCLI2: AIコンペ: HTMLとJSとCSSでゲー…",
+        "branch": "task/task-1763273036364-cebc7e",
+        "worktreePath": "/Users/ishizakiwa/Projects/python_test/.worktrees/task-1763273036364-cebc7e",
+        "parentCommitHash": "903c0d6c8151479499e274854ba412fc333d9785",
+        "lane": 2,
+        "isMerged": false,
+        "mergeCommitHash": null,
+        "statusChildren": [],
+        "isDefaultWorktree": false,
+        "renderMode": "node",
+        "shouldHide": false,
+        "tagLabel": "task/task-1763273036364-cebc7e",
+        "taskId": "task-1763273036364-cebc7e",
+        "taskStatus": "working",
+        "taskStatusLabel": "作業中",
+        "taskName": "CodexCLI2: AIコンペ: HTMLとJSとCSSでゲームアプリUIを作成し、複数モデルに提案させる。結果をgame2.htmlに出力。最終的にHTMLを開く。",
+        "tooltip": "タスク: CodexCLI2: AIコンペ: HTMLとJSとCSSでゲームアプリUIを作成し、複数モデルに提案させる。結果をgame2.htmlに出力。最終的にHTMLを開く。\nステータス: 作業中\nID: task-1763273036364-cebc7e\nBranch: task/task-1763273036364-cebc7e\nWorktree: Users/ishizakiwa/Projects/python_test/.worktrees/task-1763273036364-cebc7e",
+        "branchColor": "#4fe8b8",
+        "index": 5
+      },
+      {
+        "type": "anchor",
+        "label": "[作業中] CodexCLI3: AIコンペ: HTMLとJSとCSSでゲー…",
+        "branch": "task/task-1763273038616-6ed9ca",
+        "worktreePath": "/Users/ishizakiwa/Projects/python_test/.worktrees/task-1763273038616-6ed9ca",
+        "parentCommitHash": "903c0d6c8151479499e274854ba412fc333d9785",
+        "lane": 3,
+        "isMerged": false,
+        "mergeCommitHash": null,
+        "statusChildren": [],
+        "isDefaultWorktree": false,
+        "renderMode": "node",
+        "shouldHide": false,
+        "tagLabel": "task/task-1763273038616-6ed9ca",
+        "taskId": "task-1763273038616-6ed9ca",
+        "taskStatus": "working",
+        "taskStatusLabel": "作業中",
+        "taskName": "CodexCLI3: AIコンペ: HTMLとJSとCSSでゲームアプリUIを作成し、複数モデルに提案させる。結果をgame2.htmlに出力。最終的にHTMLを開く。",
+        "tooltip": "タスク: CodexCLI3: AIコンペ: HTMLとJSとCSSでゲームアプリUIを作成し、複数モデルに提案させる。結果をgame2.htmlに出力。最終的にHTMLを開く。\nステータス: 作業中\nID: task-1763273038616-6ed9ca\nBranch: task/task-1763273038616-6ed9ca\nWorktree: Users/ishizakiwa/Projects/python_test/.worktrees/task-1763273038616-6ed9ca",
+        "branchColor": "#e8a84f",
+        "index": 6
+      },
+      {
+        "type": "commit",
+        "label": "update janken game",
+        "commit": {
+          "hash": "903c0d6c8151479499e274854ba412fc333d9785",
+          "subject": "update janken game",
+          "author": "石崎和",
+          "timestamp": 1763271871,
+          "parents": [
+            "c9a70953c4a4aa3c9dfc9a0775dd37ddf4f75821"
+          ],
+          "parent": "c9a70953c4a4aa3c9dfc9a0775dd37ddf4f75821",
+          "refs": "HEAD -> main, origin/main, task/task-1763273040958-dd1dd3, task/task-1763273038616-6ed9ca, task/task-1763273036364-cebc7e",
+          "branches": [
+            "HEAD -> main",
+            "origin/main",
+            "task/task-1763273040958-dd1dd3",
+            "task/task-1763273038616-6ed9ca",
+            "task/task-1763273036364-cebc7e",
+            "main",
+            "task/task-1763273034212-e7caa9"
+          ]
+        },
+        "commitHash": "903c0d6c8151479499e274854ba412fc333d9785",
+        "lane": 0,
+        "parentLinks": [
+          {
+            "hash": "c9a70953c4a4aa3c9dfc9a0775dd37ddf4f75821",
+            "lane": 0
+          }
+        ],
+        "primaryBranchName": "main",
+        "branchColor": "#4f85e8",
+        "branchTags": [
+          "main",
+          "task/task-1763273040958-dd1dd3"
+        ],
+        "worktrees": [
+          {
+            "path": "/Users/ishizakiwa/Projects/python_test",
+            "head": "903c0d6c8151479499e274854ba412fc333d9785",
+            "branch": "main",
+            "isMerged": false,
+            "mergeCommitHash": null,
+            "status": {
+              "staged": [
+                {
+                  "path": "ameのコピー.html",
+                  "originalPath": null,
+                  "status": "deleted",
+                  "rawPath": "ameのコピー.html",
+                  "timestamp": 1763292863035
+                }
+              ],
+              "unstaged": [],
+              "untracked": [
+                {
+                  "path": "game2.html",
+                  "status": "untracked",
+                  "rawPath": "game2.html",
+                  "timestamp": 1763292863035
+                }
+              ],
+              "capturedAt": 1763292863035
+            },
+            "normalizedPath": "/Users/ishizakiwa/Projects/python_test",
+            "lane": 0
+          },
+          {
+            "path": "/Users/ishizakiwa/Projects/python_test/.worktrees/task-1763273036364-cebc7e",
+            "head": "903c0d6c8151479499e274854ba412fc333d9785",
+            "branch": "task/task-1763273036364-cebc7e",
+            "prunable": true,
+            "isMerged": false,
+            "mergeCommitHash": null,
+            "status": {
+              "staged": [],
+              "unstaged": [],
+              "untracked": [],
+              "capturedAt": 1763292863021
+            },
+            "normalizedPath": "/Users/ishizakiwa/Projects/python_test/.worktrees/task-1763273036364-cebc7e",
+            "lane": 2
+          },
+          {
+            "path": "/Users/ishizakiwa/Projects/python_test/.worktrees/task-1763273038616-6ed9ca",
+            "head": "903c0d6c8151479499e274854ba412fc333d9785",
+            "branch": "task/task-1763273038616-6ed9ca",
+            "prunable": true,
+            "isMerged": false,
+            "mergeCommitHash": null,
+            "status": {
+              "staged": [],
+              "unstaged": [],
+              "untracked": [],
+              "capturedAt": 1763292863021
+            },
+            "normalizedPath": "/Users/ishizakiwa/Projects/python_test/.worktrees/task-1763273038616-6ed9ca",
+            "lane": 3
+          }
+        ],
+        "index": 7
+      },
+      {
+        "type": "commit",
+        "label": "Add side-scrolling action game with goal, result screen, and…",
+        "commit": {
+          "hash": "c9a70953c4a4aa3c9dfc9a0775dd37ddf4f75821",
+          "subject": "Add side-scrolling action game with goal, result screen, and heart-based health display",
+          "author": "石崎和",
+          "timestamp": 1763268603,
+          "parents": [
+            "4a161f94b4c02824a38a2c780e0388b45464835d"
+          ],
+          "parent": "4a161f94b4c02824a38a2c780e0388b45464835d",
+          "refs": "",
+          "branches": [
+            "main",
+            "task/task-1763273034212-e7caa9",
+            "task/task-1763273036364-cebc7e",
+            "task/task-1763273038616-6ed9ca"
+          ]
+        },
+        "commitHash": "c9a70953c4a4aa3c9dfc9a0775dd37ddf4f75821",
+        "lane": 0,
+        "parentLinks": [
+          {
+            "hash": "4a161f94b4c02824a38a2c780e0388b45464835d",
+            "lane": 0
+          }
+        ],
+        "primaryBranchName": "main",
+        "branchColor": "#4f85e8",
+        "branchTags": [],
+        "index": 8
+      },
+      {
+        "type": "commit",
+        "label": "Add simple rock-paper-scissors game with rich animations",
+        "commit": {
+          "hash": "4a161f94b4c02824a38a2c780e0388b45464835d",
+          "subject": "Add simple rock-paper-scissors game with rich animations",
+          "author": "石崎和",
+          "timestamp": 1763219176,
+          "parents": [
+            "90390ab7feca4fd4ae0c7de45e14a714e1b4bea4"
+          ],
+          "parent": "90390ab7feca4fd4ae0c7de45e14a714e1b4bea4",
+          "refs": "",
+          "branches": [
+            "main",
+            "task/task-1763273034212-e7caa9",
+            "task/task-1763273036364-cebc7e",
+            "task/task-1763273038616-6ed9ca"
+          ]
+        },
+        "commitHash": "4a161f94b4c02824a38a2c780e0388b45464835d",
+        "lane": 0,
+        "parentLinks": [
+          {
+            "hash": "90390ab7feca4fd4ae0c7de45e14a714e1b4bea4",
+            "lane": 0
+          }
+        ],
+        "primaryBranchName": "main",
+        "branchColor": "#4f85e8",
+        "branchTags": [],
+        "index": 9
+      },
+      {
+        "type": "commit",
+        "label": "update",
+        "commit": {
+          "hash": "90390ab7feca4fd4ae0c7de45e14a714e1b4bea4",
+          "subject": "update",
+          "author": "石崎和",
+          "timestamp": 1763201732,
+          "parents": [
+            "4ef1fee43d3e413890e756111b37d2c38c43f044"
+          ],
+          "parent": "4ef1fee43d3e413890e756111b37d2c38c43f044",
+          "refs": "",
+          "branches": [
+            "main",
+            "task/task-1763273034212-e7caa9",
+            "task/task-1763273036364-cebc7e",
+            "task/task-1763273038616-6ed9ca"
+          ]
+        },
+        "commitHash": "90390ab7feca4fd4ae0c7de45e14a714e1b4bea4",
+        "lane": 0,
+        "parentLinks": [
+          {
+            "hash": "4ef1fee43d3e413890e756111b37d2c38c43f044",
+            "lane": 0
+          }
+        ],
+        "primaryBranchName": "main",
+        "branchColor": "#4f85e8",
+        "branchTags": [],
+        "index": 10
+      },
+      {
+        "type": "commit",
+        "label": "initial commit",
+        "commit": {
+          "hash": "4ef1fee43d3e413890e756111b37d2c38c43f044",
+          "subject": "initial commit",
+          "author": "石崎和",
+          "timestamp": 1763197066,
+          "parents": [],
+          "parent": null,
+          "refs": "",
+          "branches": [
+            "main",
+            "task/task-1763273034212-e7caa9",
+            "task/task-1763273036364-cebc7e",
+            "task/task-1763273038616-6ed9ca"
+          ]
+        },
+        "commitHash": "4ef1fee43d3e413890e756111b37d2c38c43f044",
+        "lane": 0,
+        "parentLinks": [],
+        "primaryBranchName": "main",
+        "branchColor": "#4f85e8",
+        "branchTags": [],
+        "index": 11
+      },
+      {
+        "type": "empty",
+        "label": "初期状態 (初回コミット以前)",
+        "files": [],
+        "marker": "pre-history",
+        "index": 12
+      }
+    ]
+  },
+  "projectRoot": "/Users/ishizakiwa/Projects/python_test",
+  "savedAt": 1763292865957
+}
